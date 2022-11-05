@@ -1,6 +1,54 @@
+import { useNavigate } from 'react-router-dom';
+import { services } from '../constant/service-detail';
+
 const Services = () => {
+  const navigate = useNavigate();
+
+  // const services = [{
+  //   title: "Valuation",
+  //   description: `Knowing true value of business/assets assist in fund raising,
+  //   negotiation during mergers and acquisition, deciding exit
+  //   strategies, regulatory compliances etc.`,
+  //   link: '/service/valuation',
+  //   key: 'valuation'
+  // },
+  // {
+  //   title: "Domestic taxation",
+  //   description: `statutory audit, tax audit, internal audit, concurrent
+  //   audit, management audit, compliance review audit, fraud investigation audit, GST audit, and
+  //   information system audit services`
+  // },
+  // {
+  //   title: "Indirect Tax",
+  //   description: `statutory audit, tax audit, internal audit, concurrent
+  //   audit, management audit, compliance review audit, fraud investigation audit, GST audit, and
+  //   information system audit services`
+  // },
+  // {
+  //   title: "International Tax",
+  //   description: `Global tax outflow is the key consideration for any business entities
+  //   proposing to have their global footprints.`
+  // },
+  // {
+  //   title: "Foreign Exchange Regulation",
+  //   description: `RBI is keeping watch any transactions such as purchase of
+  //   movable or immovable assets, investment in shares or securities,
+  //   export or import transactions between residents and Non-
+  //   Resident.`
+  // },
+  // {
+  //   title: "Company Set up in UAE",
+  //   description: `UAE has emerged as financial and trading hub in recent era which
+  //   motivates entrepreneurs to set up company in UAE.`
+  // }
+  // ]
+
+  const navigateToPage = (page) => {
+    navigate(page)
+  }
+
   return (
-    <section id="services" className="services">
+    <section id="services" className="services section-content">
       <div className="container" data-aos="fade-up">
 
         <div className="section-title">
@@ -9,22 +57,26 @@ const Services = () => {
         </div>
 
         <div className="row">
-          <div className="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div className="icon-box">
-              <h4><a href="">Audit & Assurance</a></h4>
-              <hr />
-              <ul>
-                <li>
-                  <p>statutory audit, tax audit, internal audit, concurrent
-                    audit, management audit, compliance review audit, fraud investigation audit, GST audit, and
-                    information
-                    system audit services.</p>
-                </li>
-              </ul>
-            </div>
-          </div>
+          {services.map((s, index) =>
+            <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100" key={s.key}>
+              <div className="icon-box service-card" style={{ textAlign: 'left' }}>
+                <h5 >{s.title}</h5>
+                <br />
 
-          <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
+                {/* <hr /> */}
+                {/* <ul> */}
+                {/* <li> */}
+                <p style={{ textAlign: 'justify' }}>{s.description}</p>
+                <br />
+
+                {s.content && <div className="read-more" onClick={(e) => navigateToPage(s.link)}>Read More...</div>}
+                {/* </li> */}
+                {/* </ul> */}
+              </div>
+            </div>
+          )}
+
+          {/* <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
             data-aos-delay="200">
             <div className="icon-box">
               <h4><a href="">Domestic taxation</a></h4>
@@ -194,7 +246,7 @@ const Services = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

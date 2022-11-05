@@ -1,8 +1,10 @@
 import React from 'react';
-import AboutUs from '../components/AboutUs';
+import AboutUs from '../components/AboutUsHomePage';
 import Services from '../components/Services';
-import Team from '../components/Team';
+// import Team from '../components/Team';
 import ContactUs from '../components/ContactUs';
+import PageHeader from '../components/PageHeader';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 	return (
@@ -12,7 +14,7 @@ const Home = () => {
 
 			{/* <body> */}
 			{/* <Header></Header> */}
-
+			<PageHeader img="logo.png" showTagline={true}></PageHeader>
 			<main id="main">
 				<AboutUs></AboutUs>
 				{/* <section id="about" className="about">
@@ -246,7 +248,7 @@ const Home = () => {
 						</div>
 					</div>
 				</section> */}
-				<Team></Team>
+				{/* <Team></Team> */}
 				{/* <section id="team" className="team">
 					<div className="container" data-aos="fade-up">
 
@@ -296,7 +298,7 @@ const Home = () => {
 
 					</div>
 				</section> */}
-				<ContactUs></ContactUs>
+				<ContactUs isHomePage={true}></ContactUs>
 				{/* <section id="contact" className="contact">
 					<div className="container" data-aos="fade-up">
 
@@ -375,8 +377,8 @@ const Home = () => {
 			</main>
 
 			<div id="preloader"></div>
-			<a href="#" className="back-to-top d-flex align-items-center justify-content-center"><i
-				className="bi bi-arrow-up-short"></i></a>
+			<Link to="/" className="back-to-top d-flex align-items-center justify-content-center"><i
+				className="bi bi-arrow-up-short"></i></Link>
 
 
 

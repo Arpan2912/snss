@@ -112,7 +112,8 @@ a {
 .blog-container {
   margin-left: 100px;
   margin-right: 100px;
-  margin-top: 20px
+  margin-top: 20px;
+  min-height: 90vh;
 }
 
 @media only screen and (max-width: 600px) {

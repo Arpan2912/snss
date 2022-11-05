@@ -1,15 +1,17 @@
-import React, { useEffect } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+
 import './App.css';
 import Home from './pages/Home';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import Blogs from './pages/Blogs';
-import { Switch } from "react-router";
 import BlogDetail from './pages/BlogDetail';
-const {innerWidth, innerHeight} = window;
-
+import Service from './pages/Service';
+import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
+import Services from './pages/Services';
 
 
 function App() {
@@ -17,10 +19,15 @@ function App() {
     <div className="App">
       <Header></Header>
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/blog" element={<BlogDetail />} />
+        <Route path="/service/:service" element={<Service />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/" element={<Home />} />
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

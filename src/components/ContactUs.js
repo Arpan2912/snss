@@ -1,18 +1,19 @@
-const ContactUs = () => {
+const ContactUs = ({ isHomePage = false }) => {
   return (
-    <section id="contact" className="contact">
+    <section id="contact" className="contact section-content">
       <div className="container" data-aos="fade-up">
 
-        <div className="section-title">
+        {isHomePage && <div className="section-title">
           <h2>Contact</h2>
-          <p>Contact Us</p>a
-        </div>
+          <p>Contact Us</p>
+        </div>}
 
         <div>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.161103491086!2d72.80758461414905!3d21.185758187777687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e775165b577%3A0x1a65169761d366af!2sNeelgagan%20Apartment%2C%20Surat%20-%20Dumas%20Rd%2C%20Athwa%20Gate%2C%20Surat%2C%20Gujarat%20395001!5e0!3m2!1sen!2sin!4v1654945367413!5m2!1sen!2sin"
             style={{ border: 0, width: '100%', height: '270px' }}
             allowFullScreen="" loading="lazy"
+            title="Map"
             referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
 

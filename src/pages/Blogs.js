@@ -5,6 +5,7 @@ import { Row, Col, Card, FormControl } from 'react-bootstrap';
 import { useNavigate, useLocation } from 'react-router'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import PageHeader from '../components/PageHeader';
 
 const pageSize = 6;
 export default function Blogs(props) {
@@ -92,12 +93,15 @@ export default function Blogs(props) {
   }
 
   return (
-    <div
-      className='blog-container'
-    >
-      {/* <Header></Header> */}
-      <div id="blogs-list">
-        <Row>
+    <>
+      <PageHeader pageTitle='Blogs'></PageHeader>
+      <div
+        className='blog-container'
+      >
+
+        {/* <Header></Header> */}
+        <div id="blogs-list">
+          {/* <Row>
           <Col>
             <div style={{ position: 'relative' }} className='search-control'>
               <FormControl type='text' name="search">
@@ -106,19 +110,20 @@ export default function Blogs(props) {
               <span style={{ position: 'relative' }}>Search</span>
             </div>
           </Col>
-        </Row>
-        <Row>
-          {blogs.map((b) => <Col lg={4} md={6} sm={12} className='mt-4 mb-4'>
-            <Card className='blog-list-card' >
-              {bucketUrl && <img src={`${bucketUrl}/${b.poster_image}`} className="poster-list-image"></img>}
-              <Card.Body>
-                <div onClick={() => openBlog(b)} className="blog-list-title">{b.title}</div>
-                <div className="blog-list-description">{b.description}</div>
-              </Card.Body>
-            </Card>
-          </Col>
-          )}
-        </Row>
+        </Row> */}
+          <Row>
+            {blogs.map((b) => <Col lg={4} md={6} sm={12} className='mt-4 mb-4'>
+              <Card className='blog-list-card' >
+                {bucketUrl && <img src={`${bucketUrl}/${b.poster_image}`} className="poster-list-image"></img>}
+                <Card.Body>
+                  <div onClick={() => openBlog(b)} className="blog-list-title">{b.title}</div>
+                  <div className="blog-list-description">{b.description}</div>
+                </Card.Body>
+              </Card>
+            </Col>
+            )}
+          </Row>
+        </div>
       </div>
-    </div>)
+    </>)
 }

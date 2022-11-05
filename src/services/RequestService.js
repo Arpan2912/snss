@@ -8,7 +8,8 @@ export const ApiRequest = async (method, url, data, headers) => {
     method,
     url,
     headers,
-    baseURL: 'http://localhost:3001',
+    // baseURL: 'http://localhost:3001',
+    baseURL: 'https://www.snssindia.in'
   }
   if (data) {
     config.data = data;
