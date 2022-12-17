@@ -14,7 +14,7 @@ const Home = () => {
 
 			{/* <body> */}
 			{/* <Header></Header> */}
-			<PageHeader img="logo.png" showTagline={true}></PageHeader>
+			<PageHeader img="logo.png" showTagline={true} backgroundImage={"../assets/img/hero-bg.jpg"}></PageHeader>
 			<main id="main">
 				<AboutUs></AboutUs>
 				{/* <section id="about" className="about">

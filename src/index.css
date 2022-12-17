@@ -1,8 +1,18 @@
+@font-face {
+  font-family: 'Calibri';
+  src: local('Calibri'), url(./fonts/Calibri/Calibri.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Cambria';
+  src: local('Cambria'), url(./fonts/Cambria/Cambria-Font-For-Android.ttf) format('truetype');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Calibri', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -69,7 +79,8 @@ label {
 .blog-list-description {
   text-align: justify;
   font-size: 14px;
-  color: #525151
+  color: #525151;
+  font-family: 'Cambria';
 }
 
 .blog-list-inner-card {
@@ -79,6 +90,7 @@ label {
 
 .blog-content {
   text-align: justify;
+  font-family: 'Cambria';
 }
 
 a {
@@ -126,4 +138,12 @@ a {
 
 .search-control {
   width: 200px !important;
+}
+
+#about {
+  font-size: 18px;
+}
+
+#service-detail {
+  font-size: 18px;
 }

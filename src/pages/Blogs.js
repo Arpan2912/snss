@@ -86,7 +86,7 @@ export default function Blogs(props) {
   }
 
   const openBlog = (blog) => {
-    navigate('/blog', { state: { blog, bucketUrl } })
+    navigate(`/blog/${blog.uuid}`, { state: { blog, bucketUrl } })
     // history.push("/blog", {
     //   blog
     // })
@@ -94,7 +94,10 @@ export default function Blogs(props) {
 
   return (
     <>
-      <PageHeader pageTitle='Blogs'></PageHeader>
+      <PageHeader
+        pageTitle='Blogs'
+        backgroundImage="../assets/img/hero-bg2.jpg"
+      ></PageHeader>
       <div
         className='blog-container'
       >

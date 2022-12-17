@@ -11,8 +11,10 @@ export default function AboutUs() {
     <div
       id="service-detail"
     >
-      <PageHeader pageTitle='About Us'></PageHeader>
-      
+      <PageHeader pageTitle='About Us'
+      backgroundImage="../assets/img/hero-bg2.jpg"
+      ></PageHeader>
+
       <AboutUsComponent></AboutUsComponent>
       {/* <Team></Team> */}
       {/* <ContactUs></ContactUs> */}

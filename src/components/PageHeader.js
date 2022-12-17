@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-const PageHeader = ({ img, pageTitle, showTagline = false }) => {
-  return <section id={showTagline ? "hero" : "hero-page"} className="d-flex align-items-center justify-content-center">
+const PageHeader = ({ img, pageTitle, showTagline = false, backgroundImage = "../assets/img/hero-bg.jpg" }) => {
+  return <section id={showTagline ? "hero" : "hero-page"} style={{ background: `url("${backgroundImage}") ${showTagline ? 'top' : ''} center` }} className="d-flex align-items-center justify-content-center">
     <div className="container" data-aos="fade-up">
 
       <div
