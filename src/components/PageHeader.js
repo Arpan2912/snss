@@ -8,7 +8,7 @@ const PageHeader = ({ img, pageTitle, showTagline = false, backgroundImage = "..
         // className="row justify-content-center" 
         className={showTagline ? 'row justify-content-center' : 'row'}
         data-aos="fade-up" data-aos-delay="150">
-        <div className="col-xl-6 col-lg-8">
+        <div className={`col-xl-${img ? '6' : '12'} col-lg-${img ? '8' : '12'}`}>
           {img && <img src={`${img}`} alt="img" style={{ width: '100%' }}></img>}
           {!img && pageTitle && <h1>{pageTitle}</h1>}
         </div>

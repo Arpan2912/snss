@@ -55,10 +55,11 @@ label {
 }
 
 .blog-title {
-  font-size: 30px;
+  font-size: 31px;
   font-weight: 700;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 15px;
+  padding-bottom: 0px;
+  color: #c70c0c
 }
 
 .blog-poster-image {
@@ -69,7 +70,7 @@ label {
 }
 
 .blog-list-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -78,9 +79,10 @@ label {
 
 .blog-list-description {
   text-align: justify;
-  font-size: 14px;
+  font-size: 16px;
+  margin-bottom: 20px;
   color: #525151;
-  font-family: 'Cambria';
+  font-family: 'Calibri';
 }
 
 .blog-list-inner-card {
@@ -90,7 +92,7 @@ label {
 
 .blog-content {
   text-align: justify;
-  font-family: 'Cambria';
+  font-family: 'Calibri';
 }
 
 a {
@@ -111,6 +113,7 @@ a {
   margin-left: 2px;
   margin-right: 2px;
   height: 100%;
+  cursor: pointer;
 }
 
 .mt-4 {
@@ -146,4 +149,38 @@ a {
 
 #service-detail {
   font-size: 18px;
+}
+
+.blog-detail-description {
+  color: #393839;
+  font-size: 19px;
+  padding-bottom: 15px;
+  padding-top: 6px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.blog-detail-last {
+  color: #686868;
+  margin-top: -10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.blog-date-absolute {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: rgba(255, 255, 255, 0.79);
+  padding: 0px 3px;
+  color: #575759;
+  font-weight: bold;
+}
+
+.blog-date {
+  color: #636365;
+  /* font-weight: bold; */
+  margin-top: 0px;
+  font-size: 14px;
 }

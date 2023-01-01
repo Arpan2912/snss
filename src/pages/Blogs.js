@@ -1,11 +1,45 @@
 import { useEffect, useState } from 'react';
 // import Header from '../components/Header';
+import moment from 'moment';
+
 import { getBlogs } from '../services/BlogService';
 import { Row, Col, Card, FormControl } from 'react-bootstrap';
 import { useNavigate, useLocation } from 'react-router'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PageHeader from '../components/PageHeader';
+
+const categories = [
+  {
+    name: 'Valuation Scoop',
+    value: 'valuation'
+  },
+  {
+    name: 'Tax Tides',
+    value: 'tax'
+  },
+  {
+    name: 'Fema Flash',
+    value: 'fema'
+  }
+];
+
+const subCategories = {
+  tax: [
+    {
+      name: 'Direct Tax',
+      value: 'direct_tax'
+    },
+    {
+      name: 'Indirect Tax',
+      value: 'indirect_tax'
+    },
+    {
+      name: 'GST',
+      value: 'gst'
+    }
+  ]
+}
 
 const pageSize = 6;
 export default function Blogs(props) {
@@ -18,9 +52,9 @@ export default function Blogs(props) {
 
   useEffect(() => {
     getAllBlogs(1);
-    window.addEventListener('scroll', handleWindowResize);
+    window.addEventListener('resize', handleWindowResize);
     return () => {
-      window.removeEventListener('scroll', handleWindowResize);
+      window.removeEventListener('resize', handleWindowResize);
     };
   }, [])
 
@@ -92,6 +126,11 @@ export default function Blogs(props) {
     // })
   }
 
+  const findCategory = (category) => {
+    const blogCategory = categories.find((c) => c.value === category);
+    return blogCategory && blogCategory.name ? blogCategory.name : category;
+  }
+
   return (
     <>
       <PageHeader
@@ -116,11 +155,14 @@ export default function Blogs(props) {
         </Row> */}
           <Row>
             {blogs.map((b) => <Col lg={4} md={6} sm={12} className='mt-4 mb-4'>
-              <Card className='blog-list-card' >
+              <Card className='blog-list-card' onClick={() => openBlog(b)} >
                 {bucketUrl && <img src={`${bucketUrl}/${b.poster_image}`} className="poster-list-image"></img>}
+                {b.category && <div className='blog-list-category'>{findCategory(b.category)}</div>}
                 <Card.Body>
-                  <div onClick={() => openBlog(b)} className="blog-list-title">{b.title}</div>
+                  <div className="blog-list-title">{b.title}</div>
                   <div className="blog-list-description">{b.description}</div>
+                  <div className='blog-date'>{moment(b.created_at).format('MMMM DD, YYYY')}</div>
+                  {/* <div className='blog-date'>{moment(b.created_at).format('DD MMMM YYYY')}</div> */}
                 </Card.Body>
               </Card>
             </Col>

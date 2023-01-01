@@ -156,13 +156,13 @@ const Header = () => {
                   <NavLink className="dropdown-item" to="s">Another action</NavLink> */}
                 </div>
               </li>
-              {/* <li>
+              <li>
                 <NavLink to="/blogs" className={({ isActive }) =>
                   isActive ? 'active' : 'scrollto'
                 }>
                   Blogs
                 </NavLink>
-              </li> */}
+              </li>
               <li>
                 <NavLink to="/contact-us" className={({ isActive }) =>
                   isActive ? 'active' : 'scrollto'
