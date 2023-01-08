@@ -7,7 +7,88 @@ import { useNavigate, useLocation, useParams } from 'react-router'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PageHeader from '../components/PageHeader';
+import { Download } from 'react-ionicons'
+import { downlodFile } from '../utils';
+
 const mobileWidth = 992;
+
+
+const categories = [
+  {
+    name: 'Valuation Scoop',
+    value: 'valuation'
+  },
+  {
+    name: 'Tax Tidings',
+    value: 'tax'
+  },
+  {
+    name: 'Fema Flash',
+    value: 'fema'
+  },
+  {
+    name: 'Global Business Setup',
+    value: 'global_business_setup'
+  }
+];
+
+const subCategories = {
+  tax: [
+    {
+      name: 'Direct Tax',
+      value: 'direct_tax'
+    },
+    {
+      name: 'International Tax',
+      value: 'international_tax'
+    },
+    {
+      name: 'Transfer Pricing',
+      value: 'transfer_pricing'
+    },
+    {
+      name: 'GST',
+      value: 'gst'
+    },
+    {
+      name: 'NRI taxation',
+      value: 'nri_taxation'
+    }
+  ],
+  fema: [
+    {
+      name: 'Foreign Direct Investment',
+      value: 'foreign_direct_investment'
+    },
+    {
+      name: 'Overseas Investment',
+      value: 'overseas_investment'
+    },
+    {
+      name: 'External Commercial Borrowings',
+      value: 'external_commercial_borrowings'
+    },
+    {
+      name: 'Dealing In Immovable properties by NRI',
+      value: 'dealing_in_immovable_properties_by_nri'
+    }
+  ],
+  global_business_setup: [
+    {
+      name: 'United Arab Emirates(UAE)',
+      value: 'uae'
+    },
+    {
+      name: 'United States of America(USA)',
+      value: 'usa'
+    },
+    {
+      name: 'Canada',
+      value: 'canada'
+    }
+  ]
+}
+
 
 export default function BlogDetail(props) {
   // const { state } = useLocation();
@@ -59,10 +140,40 @@ export default function BlogDetail(props) {
     const { innerWidth, innerHeight, pageYOffset } = window;
     return { innerWidth, innerHeight, pageYOffset };
   }
+
+  const findCategory = (category) => {
+    const blogCategory = categories.find((c) => c.value === category);
+    return blogCategory && blogCategory.name ? blogCategory.name : category;
+  }
+
+  const fetchImage = (key) => {
+    if (key.includes('.pdf')) {
+      return '/assets/img/pdf.png'
+    }
+    if (key.includes('.xlsx')) {
+      return '/assets/img/excel.png'
+    }
+    if (key.includes('.csv')) {
+      return '/assets/img/excel.png'
+    }
+  }
+
+  const fetchClass = (key) => {
+    if (key.includes('.pdf')) {
+      return 'attachment-pdf'
+    }
+    if (key.includes('.xlsx')) {
+      return ''
+    }
+    if (key.includes('.csv')) {
+      return ''
+    }
+  }
+
   return (
     <>
       {windowSize.innerWidth >= mobileWidth && <PageHeader
-        pageTitle={blog && blog.title ? blog.title : 'Blogs'}
+        pageTitle={blog && blog.category ? findCategory(blog.category) : 'Blogs'}
         backgroundImage="../assets/img/hero-bg2.jpg"
       ></PageHeader>}
       <div
@@ -84,7 +195,23 @@ export default function BlogDetail(props) {
               <div><img src={`${bucketUrl}/${blog.poster_image}`} className="blog-poster-image"></img></div>
               <div className='blog-detail-description'>{blog.description}</div>
               <div className='blog-content' dangerouslySetInnerHTML={{ __html: blog.content }} />
-
+              <div className='attachment-container'>
+                {blog.attachments && blog.attachments.map((a) =>
+                  <div className='attachment'>
+                    <img className={`attachment-img ${fetchClass(a.attachment)}`} title={a.attachment} src={fetchImage(a.attachment)}></img>
+                    <div className='download-icon'>
+                      <Download
+                        style={{ zIndex: 100, cursor: 'pointer' }}
+                        color={'#444345'}
+                        // rotate
+                        height="25px"
+                        width="25px"
+                        onClick={() => downlodFile(`${bucketUrl}/${a.attachment}`)}
+                      />
+                    </div>
+                  </div>)
+                }
+              </div>
               {/* <div className='blog-detail-last'>{moment(blog.created_at).format('DD MMM `YY')}</div> */}
             </div>
           </Col>

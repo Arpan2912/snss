@@ -163,6 +163,13 @@ const Header = () => {
                   Blogs
                 </NavLink>
               </li>
+              {/* <li>
+                <NavLink to="/news" className={({ isActive }) =>
+                  isActive ? 'active' : 'scrollto'
+                }>
+                  News and Update
+                </NavLink>
+              </li> */}
               <li>
                 <NavLink to="/contact-us" className={({ isActive }) =>
                   isActive ? 'active' : 'scrollto'

@@ -219,5 +219,5 @@ import BlogsComponent from '../components/Blogs';
 // }
 
 export default function Blogs(props) {
-  return <BlogsComponent type="blog"></BlogsComponent>
+  return <BlogsComponent type="news_and_update"></BlogsComponent>
 }

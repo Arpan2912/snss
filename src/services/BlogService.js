@@ -9,8 +9,8 @@ const addBlog = (data) => {
   return ApiRequest('post', ADD_BLOG, data, headers)
 }
 
-const getBlogs = (page, pageSize) => {
-  return ApiRequest('get', `${GET_BLOGS}?page=${page}&limit=${pageSize}`, null, null)
+const getBlogs = (type, page, pageSize) => {
+  return ApiRequest('get', `${GET_BLOGS}?type=${type}&page=${page}&limit=${pageSize}`, null, null)
 }
 
 const getBlogDetail = (uuid) => {

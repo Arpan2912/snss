@@ -12,7 +12,7 @@ import Service from './pages/Service';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import Services from './pages/Services';
-// import NewsAndUpdates from './pages/NewsAndUpdate';
+import NewsAndUpdates from './pages/NewsAndUpdate';
 // import NewsAndUpdateDetail from './pages/NewsAndUpdateDetail';
 
 
@@ -23,8 +23,7 @@ function App() {
       <Routes>
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/about" element={<AboutUs />} />
-        {/* <Route path="/news" element={<NewsAndUpdates />} />
-        <Route path="/news-detail" element={<NewsAndUpdateDetail />} /> */}
+        <Route path="/news" element={<NewsAndUpdates />} />
         <Route path="/blog/:uuid" element={<BlogDetail />} />
         <Route path="/service/:service" element={<Service />} />
         <Route path="/services" element={<Services />} />

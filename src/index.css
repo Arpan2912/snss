@@ -80,7 +80,7 @@ label {
 .blog-list-description {
   text-align: justify;
   font-size: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   color: #525151;
   font-family: 'Calibri';
 }
@@ -179,8 +179,44 @@ a {
 }
 
 .blog-date {
-  color: #636365;
+  color: #5a5a5a;
   /* font-weight: bold; */
-  margin-top: 0px;
+  margin-top: 10px;
   font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  padding: 5px 0px;
+  width: 91%;
+  border-top: 1px solid #eaeaea;
+}
+
+.blog-list-category {
+  position: absolute;
+  padding: 5px;
+  background-color: #9d2021;
+  color: white;
+}
+
+.attachment {
+  display: inline-block;
+  margin-right: 14px;
+  position: relative;
+}
+
+.attachment-img {
+  height: 80px;
+}
+
+.download-icon {
+  position: absolute;
+  right: 0px;
+  bottom: 2px;
+}
+
+.attachment-container {
+  margin-top: 15px;
+}
+
+.attachment-pdf{
+  height: 60px !important;
 }
