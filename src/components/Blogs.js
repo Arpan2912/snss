@@ -110,19 +110,6 @@ export default function Blogs({ type }) {
     const blogListComponent = document.querySelector('#blogs-list')
     console.log("blogListComponent", blogListComponent)
     if (blogListComponent) {
-      console.log("blogListComponent.offsetHeight", blogListComponent.offsetHeight)
-      console.log("blogListComponent.offsetTop", blogListComponent.offsetTop)
-      console.log("blogListComponent.scrollHeight", blogListComponent.scrollHeight)
-      console.log("blogListComponent.scrollTop", blogListComponent.scrollTop)
-      console.log("blogListComponent.clientHeight", blogListComponent.clientHeight)
-      console.log("windowSize.pageYOffset", windowSize.pageYOffset)
-      console.log("Math.abs(element.scrollHeight - element.clientHeight - element.scrollTop) < 1", Math.abs(blogListComponent.scrollHeight - blogListComponent.clientHeight - blogListComponent.scrollTop) < 1)
-      console.log("blogListComponent.scrollHeight - Math.abs(blogListComponent.scrollTop) === blogListComponent.clientHeight", blogListComponent.scrollHeight - Math.abs(blogListComponent.scrollTop) === blogListComponent.clientHeight)
-
-      //       OffsetHeight = Height of an element + Scrollbar Height.
-      //         ClientHeight = Height of an element.
-      // Height of scrollbar = offsetHeight – clientHeight.
-      console.log("blogListComponent.offsetHeight + blogListComponent.scrollTop", blogListComponent.offsetHeight + blogListComponent.scrollTop)
       if (windowSize.pageYOffset + 50 >= blogListComponent.offsetHeight + blogListComponent.scrollTop && blogListComponent.offsetHeight > 0) {
         console.log("load more data....")
         if (loadMoreData) {
@@ -165,9 +152,9 @@ export default function Blogs({ type }) {
 
   const openBlog = (blog) => {
     if (type === 'news_and_update') {
-      navigate(`/news/${blog.uuid}`, { state: { blog, bucketUrl } })
+      navigate(`/news/${blog.url}`, { state: { blog, bucketUrl } })
     } else {
-      navigate(`/blog/${blog.uuid}`, { state: { blog, bucketUrl } })
+      navigate(`/blog/${blog.url}`, { state: { blog, bucketUrl } })
     }
     // history.push("/blog", {
     //   blog

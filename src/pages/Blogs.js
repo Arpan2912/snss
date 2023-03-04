@@ -220,8 +220,8 @@ import { seo } from '../utils';
 // }
 
 export default function Blogs(props) {
-  useEffect(() => {
-    seo();
-  },[]);
+  // useEffect(() => {
+  //   seo();
+  // },[]);
   return <BlogsComponent type="blog"></BlogsComponent>
 }

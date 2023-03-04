@@ -13,8 +13,8 @@ const getBlogs = (type, page, pageSize) => {
   return ApiRequest('get', `${GET_BLOGS}?type=${type}&page=${page}&limit=${pageSize}`, null, null)
 }
 
-const getBlogDetail = (uuid) => {
-  return ApiRequest('get', `${GET_BLOG}?uuid=${uuid}`, null, null)
+const getBlogDetail = (url) => {
+  return ApiRequest('get', `${GET_BLOG}?url=${url}`, null, null)
 }
 
 export {
