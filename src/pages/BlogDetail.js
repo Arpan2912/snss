@@ -170,6 +170,10 @@ export default function BlogDetail(props) {
     }
   }
 
+  const isMobile = () => {
+    return windowSize.innerWidth < mobileWidth
+  }
+
   return (
     <>
       {windowSize.innerWidth >= mobileWidth && <PageHeader
@@ -192,7 +196,10 @@ export default function BlogDetail(props) {
                 {/* Niranjan Shah (niranjan@snssindia.in) <span style={{ color: '#c70c0c' }}>|</span>  */}
                 {moment(blog.created_at).format('MMMM DD, YYYY')}
               </div>
-              <div><img src={`${bucketUrl}/${blog.poster_image}`} className="blog-poster-image"></img></div>
+              <div style={{ position: 'relative' }}>
+                <img src={`${bucketUrl}/${blog.poster_image}`} className="blog-poster-image"></img>
+                {isMobile() && <div className='blog-list-category' style={{ top: 0, right: 0 }}>{findCategory(blog.category)}</div>}
+              </div>
               <div className='blog-detail-description'>{blog.description}</div>
               <div className='blog-content' dangerouslySetInnerHTML={{ __html: blog.content }} />
               <div className='attachment-container'>

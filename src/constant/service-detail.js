@@ -1,6 +1,7 @@
 export const services = [
   {
-    title: "Valuation",
+    title: "Business Valuation",
+    metaTitle: "Business Valuation | Start up Valuation | Equity Valuation | SNSS",
     description: `Knowing true value of business/assets assist in fund raising,
   negotiation during mergers and acquisition, deciding exit
   strategies, regulatory compliances etc.`,
@@ -53,6 +54,7 @@ export const services = [
   // },
   {
     title: "International Tax",
+    metaTitle: "International Tax Services | Form 15CA-CB for TDS on Payments to NR | SNSS",
     description: `Global tax outflow is the key consideration for any business entities
   proposing to have their global footprints.`,
     link: '/service/international-tax',
@@ -89,7 +91,8 @@ export const services = [
     ]
   },
   {
-    title: "Foreign Exchange Regulation",
+    title: "FEMA Consultancy",
+    metaTitle: "FEMA Consultancy | FEMA Consultant in Surat | FDI | ODI | ECB| SNSS",
     description: `RBI is keeping watch any transactions such as purchase of
   movable or immovable assets, investment in shares or securities,
   export or import transactions between residents and Non-
@@ -138,6 +141,7 @@ export const services = [
   },
   {
     title: "Company Set up in UAE",
+    metaTitle: "Company Set up in UAE | Consultant for company Incorporating in UAE | SNSS",
     description: `UAE has emerged as financial and trading hub in recent era which
   motivates entrepreneurs to set up company in UAE.`,
     link: '/service/company-setup-uae',
@@ -184,7 +188,38 @@ export const services = [
     ]
   },
   {
+    title: "Company Set up in USA",
+    metaTitle: "Company Set up in USA | Consultant for company Incorporating in USA | SNSS",
+    description: `There are three legal structure available to business man for setting up business in USA.`,
+    link: '/service/company-setup-usa',
+    key: 'company-setup-usa',
+    content: [
+      {
+        type: "paragraph",
+        content: `There are three legal structure available to business man for setting up business in USA. One is Limited Liability Company, C-Corporation, S- Corporation. Depending on the facts of each case we suggest appropriate structure. Our end-to-end support and well-complied business structure improve comfort level of Indian entrepreneurs.`,
+        imgPath: '/assets/img/valuation/valuation1.jpg'
+
+      },
+      {
+        type: "list",
+        title: null,
+        content: [
+          [`Assisting in selection of Place of registration`],
+          [`Registration of Company in USA`],
+          [`Assisting in Bank account opening.`],
+          [`Assisting in arranging physical office`],
+          [`Book Keeping and Financial planning`],
+          [`Vat Consultation/ Return Filing`],
+          [`Tax Compliances`],
+          [`Domestic Compliances for Indian Investor`],
+        ],
+        imgPath: '/assets/img/valuation/valuation2.jpg'
+      }
+    ]
+  },
+  {
     title: "GIFT -IFSC",
+    metaTitle: "GIFT -IFSC | Incorporating a company in GIFT IFSC, Gandhinagar",
     description: `GIFT City is an integrated development on 886 acres of land with
     62 mn sq. ft. of Built Up. GIFT City consist of a conducive Multi-Service SEZ (Special Economic Zone) and an exclusive Domestic
     Are.`,
@@ -227,6 +262,7 @@ export const services = [
   },
   {
     title: "Transfer Pricing Compliances",
+    metaTitle: "Transfer Pricing Compliances | Transfer Pricing Advisor in Surat, Gujarat | SNSS",
     description: `In the current global environment, companies have operations
     across the globe. Any business transactions with associated
     enterprise (i.e. foreign related party) triggers transfer pricing
@@ -263,6 +299,7 @@ export const services = [
   },
   {
     title: "Start Up Advisory Services",
+    metaTitle: "Start Up Advisory Services | Start up Consultant in Surat, Gujarat| SNSS",
     description: `An entrepreneur at the initial stage has to consider so many
     unknown factors for success of any idea or business model.`,
     link: '/service/start-up-advisory',
@@ -302,6 +339,7 @@ export const services = [
   },
   {
     title: "Out Sourced CFO",
+    metaTitle: "Out Sourced CFO| Virtual CFO | SNSS &amp; Co",
     description: `Outsourcing of functions related to CFO is very benefiting and
     smart step for small and medium size service entities and start up
     owners.`,
@@ -340,6 +378,7 @@ export const services = [
   },
   {
     title: "Audit and Assurance",
+    metaTitle: "Audit and Assurance | Statutory Audit of Consolidated Financial statements | SNSS",
     description: `Audit of books of accounts involves inspecting and testing the
     correctness of transactions already undertaken.`,
     link: '/service/audit-assurance',
@@ -357,6 +396,7 @@ export const services = [
   },
   {
     title: "Direct Tax Compliances",
+    metaTitle: "Direct Tax Compliances | NRI Taxation advisory | SNSS &amp; Co",
     description: `Every resident in India as well as Non-residents earning income
     from Indian sources are touching the boundaries of income tax
     law in India..`,
@@ -392,6 +432,7 @@ export const services = [
   },
   {
     title: "GST advisory Services",
+    metaTitle: "GST advisory Services | GST Registration and consulting Services | SNSS",
     description: `With introduction of GST Laws in India, big business houses, small
     and medium entities are looking for GST professionals for
     implementation of new law.`,

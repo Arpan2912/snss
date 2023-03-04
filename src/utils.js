@@ -10,3 +10,14 @@ export function downlodFile(url) {
   // 5. Clean up and remove the link
   link.parentNode.removeChild(link);
 }
+
+export function seo(data = {}) {
+  console.log("data", data);
+  const defaultTitle = 'SNSS & Co | FEMA Consultant | International Tax| Company set up in UAE/USA';
+  const defaultDescription = 'SNSS & Co | FEMA Consultant | International Tax| Company set up in UAE/USA';
+  data.title = data.title || defaultTitle;
+  data.metaDescription = data.metaDescription || defaultDescription;
+
+  document.title = data.title;
+  document.querySelector('meta[name="description"]').setAttribute('content', data.metaDescription);
+}

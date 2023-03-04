@@ -4,8 +4,13 @@
 import PageHeader from '../components/PageHeader';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ContactUsComponent from '../components/ContactUs';
+import { useEffect } from 'react';
+import { seo } from '../utils';
 
 export default function ContactUs(props) {
+  useEffect(() => {
+    seo();
+  },[]);
 
   return (
     <div

@@ -4,19 +4,24 @@
 import PageHeader from '../components/PageHeader';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AboutUsComponent from '../components/AboutUs';
-// import Team from '../components/Team';
+import Team from '../components/Team';
+import { useEffect } from 'react';
+import { seo } from '../utils';
 
 export default function AboutUs() {
+  useEffect(() => {
+    seo();
+  },[])
   return (
     <div
       id="service-detail"
     >
       <PageHeader pageTitle='About Us'
-      backgroundImage="../assets/img/hero-bg2.jpg"
+        backgroundImage="../assets/img/hero-bg2.jpg"
       ></PageHeader>
 
       <AboutUsComponent></AboutUsComponent>
-      {/* <Team></Team> */}
+      <Team></Team>
       {/* <ContactUs></ContactUs> */}
     </div >
   )

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { services } from '../constant/service-detail';
-
+import logo from '../assets/logo.png';
 // const defaultScrollHeights = {
 //   about: 5000,
 //   service: 5000,
@@ -109,7 +109,7 @@ const Header = () => {
 
           {/* <h1 className="logo me-auto me-lg-0"><a href="index.html">SNSS</a></h1> */}
           <div>
-            <Link to="/"><img src="logo.png" alt="SNSS" className="logo" style={{ width: '200px' }}></img></Link>
+            <Link to="/"><img src={logo} alt="SNSS" className="logo" style={{ width: '200px' }}></img></Link>
           </div>
 
           <nav id="navbar" className={`${windowSize.innerWidth >= mobileWidth ? 'navbar' : 'navbar-mobile'} order-last order-lg-0`}>
@@ -156,14 +156,44 @@ const Header = () => {
                   <NavLink className="dropdown-item" to="s">Another action</NavLink> */}
                 </div>
               </li>
-              <li>
+              <li className="dropdown">
+                <NavLink
+                  to="/blogs"
+                  // onClick={e => {
+                  //   e.preventDefault()
+                  //   // setui(!ui)
+                  // }}
+                  className={({ isActive }) =>
+                    isActive ? 'dropdown-toggle active' : 'dropdown-toggle'}
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Resources
+                </NavLink>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <NavLink className="dropdown-item" to={{
+                    pathname: "/blogs"
+
+                  }}>Blogs</NavLink>
+                  <NavLink className="dropdown-item" to={{
+                    pathname: "/news"
+
+                  }}>News and Update</NavLink>
+                  {/* <NavLink className="dropdown-item" to="#">Action</NavLink>
+                  <NavLink className="dropdown-item" to="s">Another action</NavLink> */}
+                </div>
+              </li>
+              {/* <li>
                 <NavLink to="/blogs" className={({ isActive }) =>
                   isActive ? 'active' : 'scrollto'
                 }>
                   Blogs
                 </NavLink>
               </li>
-              {/* <li>
+              <li>
                 <NavLink to="/news" className={({ isActive }) =>
                   isActive ? 'active' : 'scrollto'
                 }>

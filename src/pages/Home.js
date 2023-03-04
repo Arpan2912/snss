@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AboutUs from '../components/AboutUsHomePage';
 import Services from '../components/Services';
 // import Team from '../components/Team';
 import ContactUs from '../components/ContactUs';
 import PageHeader from '../components/PageHeader';
 import { Link } from 'react-router-dom';
+import { seo } from '../utils';
 
 const Home = () => {
+	useEffect(() => {
+		seo();
+	},[]);
+	
 	return (
 		<div
 		// className={styles.container}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import BlogsComponent from '../components/Blogs';
+import { seo } from '../utils';
 // // import Header from '../components/Header';
 // import moment from 'moment';
 
@@ -219,5 +220,8 @@ import BlogsComponent from '../components/Blogs';
 // }
 
 export default function Blogs(props) {
+  useEffect(() => {
+    seo();
+  },[]);
   return <BlogsComponent type="blog"></BlogsComponent>
 }

@@ -164,7 +164,11 @@ export default function Blogs({ type }) {
   }
 
   const openBlog = (blog) => {
-    navigate(`/blog/${blog.uuid}`, { state: { blog, bucketUrl } })
+    if (type === 'news_and_update') {
+      navigate(`/news/${blog.uuid}`, { state: { blog, bucketUrl } })
+    } else {
+      navigate(`/blog/${blog.uuid}`, { state: { blog, bucketUrl } })
+    }
     // history.push("/blog", {
     //   blog
     // })

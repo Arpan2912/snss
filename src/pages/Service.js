@@ -5,6 +5,7 @@ import { useNavigate, useLocation, useParams } from 'react-router'
 import { services } from '../constant/service-detail';
 import PageHeader from '../components/PageHeader';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { seo } from '../utils';
 
 export default function Service(props) {
   const location = useLocation();
@@ -30,6 +31,7 @@ export default function Service(props) {
     } else {
       const serviceDetail = services.find((s) => s.key === service)
       console.log('serviceDetail', serviceDetail)
+      seo({ title: serviceDetail.metaTitle })
       if (!serviceDetail) {
         navigate('/')
       } else {
@@ -42,6 +44,7 @@ export default function Service(props) {
   useEffect(() => {
     console.log("location changed", location)
     const serviceDetail = services.find((s) => s.link === location.pathname)
+    seo({ title: serviceDetail.metaTitle })
     if (serviceDetail) {
       setServiceDetail(serviceDetail);
     }
@@ -75,6 +78,7 @@ export default function Service(props) {
     navigate(`/service/${key}`)
     const serviceDetail = services.find((s) => s.key === key)
     console.log('serviceDetail', serviceDetail)
+    seo({ title: serviceDetail.metaTitle })
     if (!serviceDetail) {
       navigate('/')
     } else {
@@ -104,7 +108,7 @@ export default function Service(props) {
             {windowSize && windowSize.innerWidth >= 992 && <Col md={3}>
               {services.map((s) => s.content && <div className={`service-side-link ${serviceDetail.key === s.key ? 'active-side-link' : ''}`} key={s.key} onClick={() => navigateService(s.key)}>{s.title}</div>)}
             </Col>}
-            <Col  lg={9} md={12} sm={12}>
+            <Col lg={9} md={12} sm={12}>
               <div>{serviceDetail.content.map((c, index) => {
                 return <><Row>
                   {/* {index % 2 !== 0 && < Col >

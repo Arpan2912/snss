@@ -27,6 +27,11 @@ const Team = () => {
                 <h4 className="section-content">CA Niranjan Shah</h4>
                 <span>Co-founder</span>
                 <div>
+                  <div>Niranjan Shah, founder of SNSS & Co is a Chartered accountant since 2010 and is a member of international tax committee of WIRC of ICAI for the year 2022-23. He is a registered valuer with IBBI and a member of Independent Director’s Databank with IICA</div>
+                  <div className="mt-2">He has vast experience of more than a decade in the field of International Tax, Transfer pricing, FEMA consulting, Business Valuations, cross border structuring, advisory and litigation under direct tax etc. </div>
+                  <div className="mt-2">He is contributor to the journals published by ICAI RVO and regularly write blogs on various subjects in profession</div>
+                  <div className="mt-2">During the tenure of his professional career, he has been exposed to various clients having global presence across diversified sectors as well as advising to MNCs who wants to set up their business in India</div>
+                  <div className="mt-2">He is also performing key role in the firms for Statutory Audit, Ind AS/IFRS consulting etc.</div>
                   {/* <ul>
                     <li>Member of international tax committee of WIRC of ICAI for the year 2022-23</li>
                     <li>Registered valuer with IBBI and a member of Independent Director’s Databank with IICA</li>
@@ -60,6 +65,9 @@ const Team = () => {
                 <span>Co-founder</span>
                 <div>
                   <div>
+                    <div>Sanyam Shah is qualified Chartered accountants since 2014 and has good experience in consulting and compliance for GST matters.</div>
+                    <div className="mt-2">He has also advised small and medium enterprises in the field of GST and finance solutions</div>
+                    <div className="mt-2">His key expertise includes CFO functions for SMEs, Financial Planning and GST solutions, commercial law matters, strategic business planning for service and trading companies as well as retail sector. He has been exposed to service entities operating in FMCG and retail industry</div>
                     {/* <ul>
                       <li>Experienced in consulting and compliance for GST matters</li>
                       <li>Advised small and medium enterprises in the field of GST and finance solutions</li>

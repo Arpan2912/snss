@@ -36,8 +36,8 @@ const ContactUs = ({ isHomePage = false }) => {
               <div className="phone">
                 <i className="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+91 9825860488</p>
-                <p>+91 9904003198</p>
+                <p><a href="tel:+91 9825860488">+91 9825860488</a></p>
+                <p><a href="tel:+91 9904003198">+91 9904003198</a></p>
               </div>
 
             </div>
