@@ -31,7 +31,9 @@ export default function Service(props) {
     } else {
       const serviceDetail = services.find((s) => s.key === service)
       console.log('serviceDetail', serviceDetail)
-      seo({ title: serviceDetail.metaTitle })
+      if(serviceDetail){
+       seo({ title: serviceDetail.metaTitle })
+      }
       if (!serviceDetail) {
         navigate('/')
       } else {
