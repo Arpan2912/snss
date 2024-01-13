@@ -175,7 +175,7 @@ export default function Blogs({ type }) {
     <>
       <PageHeader
         pageTitle={type === 'news_and_update' ? 'News and Updates' : 'Blogs'}
-        backgroundImage="../assets/img/hero-bg2.jpg"
+        backgroundImage="../assets/img/blogs.jpg"
       ></PageHeader>
       <div
         className='blog-container'

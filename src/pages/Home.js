@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AboutUs from '../components/AboutUsHomePage';
 import Services from '../components/Services';
 // import Team from '../components/Team';
@@ -8,8 +8,28 @@ import { Link } from 'react-router-dom';
 import { seo } from '../utils';
 
 const Home = () => {
+	const [isMobile, setIsMobile] = useState(false);
 	useEffect(() => {
 		seo();
+	}, []);
+
+
+	useEffect(() => {
+		const handleResize = () => {
+			const isMobileDevice = window.innerWidth <= 768; // Adjust the threshold as needed
+			setIsMobile(isMobileDevice);
+		};
+
+		// Initial check on mount
+		handleResize();
+
+		// Add event listener for window resize
+		window.addEventListener('resize', handleResize);
+
+		// Clean up the event listener on component unmount
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
 	}, []);
 
 	return (
@@ -19,240 +39,12 @@ const Home = () => {
 
 			{/* <body> */}
 			{/* <Header></Header> */}
-			<PageHeader img="logo.png" showTagline={true} backgroundImage={"../assets/img/home-bg-min.jpg"} backgroundSize="cover"></PageHeader>
+			<PageHeader img="logo.png" showTagline={true} backgroundImage={isMobile ? "../assets/img/home-bg-mobile.jpg" : "../assets/img/home-bg-min.jpg"} backgroundSize="cover"></PageHeader>
 			<main id="main">
 				<AboutUs></AboutUs>
-				{/* <section id="about" className="about">
-					<div className="container" data-aos="fade-up">
-
-						<div className="row">
-							<div className="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-								<img src="assets/img/about.jpg" className="img-fluid" alt=""></img>
-							</div>
-							<div className="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
-								<h3>About Us</h3>
-								<p className="fst-italic">
-									S N S S & Co is a firm of young Chartered Accountants, run by professionals having expertise in the
-									different domains at Surat, Gujarat, India. Our diversified domain consists of audit, taxations and
-									consulting of corporate clients as well as Medium & Small sized entities. <br />
-								</p>
-								<p>
-									Our cross-border service portfolio includes International taxation, transfer pricing, FEMA compliances,
-									structuring of mid sized entities, business valuations etc. We also conduct statutory audits for banks,
-									corporate entities and LLPs.
-								</p>
-								<p>
-									We place emphasis on professional ethics, Innovation and continuous skill enhancements coupled with proper
-									use of technology play an important role. Our professional approach blended with personal touch has earned
-									us enormous confidence of all our clients, which is reflected in an enduring business relationship that we
-									enjoy with them as also in the consistent growth in portfolio of our services. We hold ourselves
-									responsible to the profession, clients, society at large and to the nation.
-								</p>
-							</div>
-						</div>
-
-					</div>
-				</section> */}
 
 				<Services></Services>
-				{/* <section id="services" className="services">
-					<div className="container" data-aos="fade-up">
 
-						<div className="section-title">
-							<h2>Services</h2>
-							<p>Check our Services</p>
-						</div>
-
-						<div className="row">
-							<div className="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-								<div className="icon-box">
-									<h4><a href="">Audit & Assurance</a></h4>
-									<hr />
-									<ul>
-										<li>
-											<p>statutory audit, tax audit, internal audit, concurrent
-												audit, management audit, compliance review audit, fraud investigation audit, GST audit, and
-												information
-												system audit services.</p>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
-								data-aos-delay="200">
-								<div className="icon-box">
-									<h4><a href="">Domestic taxation</a></h4>
-									<hr />
-									<ul>
-										<li>
-											<p>Tax efficient business structuring</p>
-										</li>
-										<li>
-											<p>Preparation and filing of Tax Returns</p>
-										</li>
-										<li>
-											<p>Representation before the Taxation Authorities</p>
-										</li>
-										<li>
-											<p>Appearing before the Appellate Authority</p>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
-								data-aos-delay="300">
-								<div className="icon-box">
-									<h4><a href="">Indirect Tax</a></h4>
-									<hr />
-									<ul>
-										<li>
-											<p>GST Registration, Return, Audit</p>
-										</li>
-										<li>
-											<p>Monthly consulting for routine GST compliances</p>
-										</li>
-										<li>
-											<p>GST Compliance Review</p>
-										</li>
-										<li>
-											<p>Refund of Input Tax Credit</p>
-										</li>
-										<li>
-											<p>Impact analysis of GST applicability to Industry</p>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-								<div className="icon-box">
-									<h4><a href="">International Taxation</a></h4>
-									<hr />
-									<ul>
-										<li>
-											<p>Guiding benchmarking principles for establishment of Place of Effective Management (POEM)</p>
-										</li>
-										<li>
-											<p>Assisting structuring especially for green field entities wants to set up business operations
-												in/Outside India</p>
-										</li>
-										<li>
-											<p>Advising on routine and non routine international transactions with an emphasis on global tax
-												efficiency, DTAAs, BEPS, Multi lateral Agreement signed between the countries etc.</p>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-								<div className="icon-box">
-									<h4><a href="">NRI Consulting</a></h4>
-									<hr />
-									<ul>
-										<li>
-											<p>As one of the CA firms in Ahmedabad, our team of professionals aids you with services that are
-												related
-												to corporate law, FEMA compliance, Foreign Trade Policy (FTP) compliance, US GAAP/IFRS conversion,
-												business valuation, and merger and acquisition.</p>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-								<div className="icon-box">
-									<h4><a href="">FEMA Consulting</a></h4>
-									<hr />
-									<ul>
-										<li>
-											<p>Compliances for Foreign Direct investment as well as transfer of shares, debentures & securities
-												between Residents and Non - Residents in India and outside India.</p>
-										</li>
-										<li>
-											<p>Reporting in Single Master Form (Erstwhile separate reporting for FC-GPR , FC-TRS , ODI etc).</p>
-										</li>
-										<li>
-											<p>Compliances for Overseas Direct Investment (ODI) by Indian residents.</p>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-								<div className="icon-box">
-									<h4><a href="">Valuations Advisory</a></h4>
-									<hr />
-									<ul>
-										<li>
-											<p>Assisting in development & review of financial model/projections</p>
-										</li>
-										<li>
-											<p>Valuation of intellectual property(IP) like trade name, brand name, goodwill, customer contracts
-											</p>
-										</li>
-										<li>
-											<p>Valuation of Shares & Securities as required under RBI law or Companies act.</p>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-								<div className="icon-box">
-									<h4><a href="">Business Setup</a></h4>
-									<hr />
-									<ul>
-										<li>
-											<p>As one of the CA firms in Ahmedabad, our team of professionals aids you with services that are
-												related
-												to corporate law, FEMA compliance, Foreign Trade Policy (FTP) compliance, US GAAP/IFRS conversion,
-												business valuation, and merger and acquisition.</p>
-										</li>
-									</ul>
-								</div>
-
-							</div>
-
-							<div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-								<div className="icon-box">
-									<h4><a href="">RERA Consulting</a></h4>
-									<hr />
-									<ul>
-										<li>
-											<p>As one of the CA firms in Ahmedabad, our team of professionals aids you with services that are
-												related
-												to corporate law, FEMA compliance, Foreign Trade Policy (FTP) compliance, US GAAP/IFRS conversion,
-												business valuation, and merger and acquisition.</p>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-								<div className="icon-box">
-									<h4><a href="">Startup Consulting</a></h4>
-									<hr />
-									<ul style={{ textAlign: 'left' }}>
-										<li>
-											<p>Guiding on legal structuring of entities</p>
-										</li>
-										<li>
-											<p>Guiding on Investment Instruments</p>
-										</li>
-										<li>
-											<p>Start Up registration, valuation</p>
-										</li>
-										<li>
-											<p>Review of Start Up’s Business Plan </p>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section> */}
 				{/* <Team></Team> */}
 				{/* <section id="team" className="team">
 					<div className="container" data-aos="fade-up">
