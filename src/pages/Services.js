@@ -7,13 +7,13 @@ import { seo } from '../utils';
 export default function Service(props) {
   useEffect(() => {
     seo();
-  },[]);
+  }, []);
 
   return (
     <div
       id="service-detail"
     >
-      <PageHeader pageTitle='Services'></PageHeader>
+      <PageHeader pageTitle='Services' backgroundImage='../assets/img/services-bg-min.jpg'></PageHeader>
 
       <Services></Services>
       {/* <Team></Team> */}

@@ -6,6 +6,8 @@ export const services = [
   negotiation during mergers and acquisition, deciding exit
   strategies, regulatory compliances etc.`,
     link: '/service/valuation',
+    headerImage: "../assets/img/valuation-bg-wa.jpg",
+    cardImage: "../assets/img/valuation-card.jpg",
     key: 'valuation',
     content: [{
       type: "paragraph",
@@ -52,6 +54,7 @@ export const services = [
   // audit, management audit, compliance review audit, fraud investigation audit, GST audit, and
   // information system audit services`
   // },
+  
   {
     title: "International Tax",
     metaTitle: "International Tax Services | Form 15CA-CB for TDS on Payments to NR | SNSS",
@@ -59,6 +62,8 @@ export const services = [
   proposing to have their global footprints.`,
     link: '/service/international-tax',
     key: 'international-tax',
+    headerImage: "../assets/img/international-tax-bg-wa.jpg",
+    cardImage: "../assets/img/international-tax-card.jpg",
     content: [{
       type: "paragraph",
       content: `Global tax outflow is the key consideration for any business entities
@@ -99,6 +104,8 @@ export const services = [
   Resident.`,
     link: '/service/foreign-exchange',
     key: 'foreign-exchange',
+    headerImage: "../assets/img/fema-bg-wa.jpg",
+    cardImage: "../assets/img/fema-card.jpg",
     content: [{
       type: "paragraph",
       content: `RBI is keeping watch on every transaction effecting foreign
@@ -146,6 +153,8 @@ export const services = [
   motivates entrepreneurs to set up company in UAE.`,
     link: '/service/company-setup-uae',
     key: 'company-setup-uae',
+    headerImage: "../assets/img/uae-bg-wa.jpg",
+    cardImage: "../assets/img/uae-card.jpg",
     content: [
       {
         type: "paragraph",
@@ -193,6 +202,8 @@ export const services = [
     description: `There are three legal structure available to business man for setting up business in USA.`,
     link: '/service/company-setup-usa',
     key: 'company-setup-usa',
+    headerImage: "../assets/img/usa-bg-wa.jpg",
+    cardImage: "../assets/img/usa-card.jpg",
     content: [
       {
         type: "paragraph",
@@ -225,6 +236,8 @@ export const services = [
     Are.`,
     link: '/service/gift-ifsc',
     key: 'gift-ifsc',
+    headerImage: "../assets/img/gift-city-bg-wa.jpg",
+    cardImage: "../assets/img/gift-city-card.jpg",
     content: [
       {
         type: "paragraph",
@@ -269,6 +282,8 @@ export const services = [
     regulation in India.`,
     link: '/service/transfer-pricing-complience',
     key: 'transfer-pricing-complience',
+    headerImage: "../assets/img/transfer-pricing-bg-wa.jpg",
+    cardImage: "../assets/img/transfer-pricing-card.jpg",
     content: [
       {
         type: "paragraph",
@@ -304,6 +319,8 @@ export const services = [
     unknown factors for success of any idea or business model.`,
     link: '/service/start-up-advisory',
     key: 'start-up-advisory',
+    headerImage: "../assets/img/startup-bg-wa.jpg",
+    cardImage: "../assets/img/startup-card.jpg",
     content: [
       {
         type: "paragraph",
@@ -345,6 +362,8 @@ export const services = [
     owners.`,
     link: '/service/out-sourced-cfo',
     key: 'out-sourced-cfo',
+    headerImage: "../assets/img/outsourced-cfo-bg-wa.jpg",
+    cardImage: "../assets/img/outsourced-cfo-card.jpg",
     content: [
       {
         type: "paragraph",
@@ -383,6 +402,8 @@ export const services = [
     correctness of transactions already undertaken.`,
     link: '/service/audit-assurance',
     key: 'audit-assurance',
+    headerImage: "../assets/img/audit-bg-wa.jpg",
+    cardImage: "../assets/img/audit-card.jpg",
     content: [
       {
         type: "paragraph",
@@ -402,6 +423,8 @@ export const services = [
     law in India..`,
     link: '/service/direct-tax',
     key: 'direct-tax',
+    headerImage: "../assets/img/direct-tax-bg-wa.jpg",
+    cardImage: "../assets/img/direct-tax-card.jpg",
     content: [
       {
         type: "paragraph",
@@ -438,6 +461,8 @@ export const services = [
     implementation of new law.`,
     link: '/service/gst',
     key: 'gst',
+    headerImage: "../assets/img/gst-bg-wa.jpg",
+    cardImage: "../assets/img/gst-card.jpg",
     content: [
       {
         type: "paragraph",

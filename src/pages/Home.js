@@ -10,8 +10,8 @@ import { seo } from '../utils';
 const Home = () => {
 	useEffect(() => {
 		seo();
-	},[]);
-	
+	}, []);
+
 	return (
 		<div
 		// className={styles.container}
@@ -19,7 +19,7 @@ const Home = () => {
 
 			{/* <body> */}
 			{/* <Header></Header> */}
-			<PageHeader img="logo.png" showTagline={true} backgroundImage={"../assets/img/hero-bg.jpg"}></PageHeader>
+			<PageHeader img="logo.png" showTagline={true} backgroundImage={"../assets/img/home-bg-min.jpg"} backgroundSize="cover"></PageHeader>
 			<main id="main">
 				<AboutUs></AboutUs>
 				{/* <section id="about" className="about">

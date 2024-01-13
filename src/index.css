@@ -218,7 +218,7 @@ a {
   margin-top: 15px;
 }
 
-.attachment-pdf{
+.attachment-pdf {
   height: 60px !important;
 }
 
@@ -228,4 +228,12 @@ a {
   font-size: 16px;
   color: #484848;
   display: block;
+}
+
+.service-card-image {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1%;
+  margin-bottom: 10px;
 }

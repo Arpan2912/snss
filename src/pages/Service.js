@@ -31,8 +31,8 @@ export default function Service(props) {
     } else {
       const serviceDetail = services.find((s) => s.key === service)
       console.log('serviceDetail', serviceDetail)
-      if(serviceDetail){
-       seo({ title: serviceDetail.metaTitle })
+      if (serviceDetail) {
+        seo({ title: serviceDetail.metaTitle })
       }
       if (!serviceDetail) {
         navigate('/')
@@ -94,7 +94,7 @@ export default function Service(props) {
       id="service-detail"
     >
       {serviceDetail && <>
-        <PageHeader pageTitle={serviceDetail.title}></PageHeader>
+        <PageHeader pageTitle={serviceDetail.title} backgroundImage={serviceDetail.headerImage}></PageHeader>
 
         <div className="container" >
           <Row className='ms-2'>

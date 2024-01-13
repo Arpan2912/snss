@@ -60,14 +60,15 @@ const Services = () => {
           {services.map((s, index) =>
             <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100" key={s.key}>
               <div className="icon-box service-card" style={{ textAlign: 'left' }}>
-                <h5 >{s.title}</h5>
-                <br />
+                <img src={s.cardImage} className="service-card-image"></img>
+                <h5 style={{ marginBottom: '10px' }}>{s.title}</h5>
+                {/* <br /> */}
 
                 {/* <hr /> */}
                 {/* <ul> */}
                 {/* <li> */}
-                <p style={{ textAlign: 'justify' }}>{s.description}</p>
-                <br />
+                <p style={{ textAlign: 'justify', marginBottom: '25px' }}>{s.description}</p>
+                {/* <br /> */}
 
                 {s.content && <div className="read-more" onClick={(e) => navigateToPage(s.link)}>Read More...</div>}
                 {/* </li> */}
@@ -249,7 +250,7 @@ const Services = () => {
           </div> */}
         </div>
       </div>
-    </section>
+    </section >
   )
 }
 export default Services;
