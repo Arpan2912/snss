@@ -10,13 +10,16 @@ import { seo } from '../utils';
 export default function ContactUs(props) {
   useEffect(() => {
     seo();
-  },[]);
+  }, []);
 
   return (
     <div
       id="service-detail"
     >
-      <PageHeader pageTitle='Contact Us'></PageHeader>
+      <PageHeader
+        pageTitle='Contact Us'
+        backgroundImage="../assets/img/contact.jpg"
+      ></PageHeader>
 
       <ContactUsComponent></ContactUsComponent>
     </div >

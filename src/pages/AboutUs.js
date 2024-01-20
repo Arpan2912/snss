@@ -17,7 +17,7 @@ export default function AboutUs() {
       id="service-detail"
     >
       <PageHeader pageTitle='About Us'
-        backgroundImage="../assets/img/hero-bg2.jpg"
+        backgroundImage="../assets/img/about-us.jpg"
       ></PageHeader>
 
       <AboutUsComponent></AboutUsComponent>

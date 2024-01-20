@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const PageHeader = ({ img, pageTitle, showTagline = false, backgroundImage = "../assets/img/home-bg.jpg" }) => {
+const PageHeader = ({ img, pageTitle, showTagline = false, backgroundImage = "../assets/img/home-bg-min.jpg" }) => {
   return <section id={showTagline ? "hero" : "hero-page"}
     style={{
       background: `url("${backgroundImage}") ${showTagline ? 'top' : ''} center/cover`,
@@ -14,9 +14,9 @@ const PageHeader = ({ img, pageTitle, showTagline = false, backgroundImage = "..
         data-aos="fade-up" data-aos-delay="150">
         <div className={`col-xl-${img ? '6' : '12'} col-lg-${img ? '8' : '12'}`}>
           {img && <img src={`${img}`} alt="img" style={{ width: '100%' }}></img>}
-          {!img && pageTitle && <h1 ><span style={{
+          {/* {!img && pageTitle && <h1 ><span style={{
             backgroundColor: `${!showTagline ? "rgba(255,255,255,0.9)" : ""}`
-          }}>{pageTitle}</span></h1>}
+          }}>{pageTitle}</span></h1>} */}
         </div>
       </div>
 
