@@ -101,9 +101,9 @@ export default function Blogs({ type }) {
 
   useEffect(() => {
     getAllBlogs(1);
-    window.addEventListener('resize', handleWindowResize);
+    window.addEventListener('scroll', handleWindowResize);
     return () => {
-      window.removeEventListener('resize', handleWindowResize);
+      window.removeEventListener('scroll', handleWindowResize);
     };
   }, [])
 
@@ -115,7 +115,8 @@ export default function Blogs({ type }) {
     const blogListComponent = document.querySelector('#blogs-list')
     console.log("blogListComponent", blogListComponent)
     if (blogListComponent) {
-      if (windowSize.pageYOffset + 50 >= blogListComponent.offsetHeight + blogListComponent.scrollTop && blogListComponent.offsetHeight > 0) {
+      // if (windowSize.pageYOffset + 50 >= blogListComponent.offsetHeight + blogListComponent.scrollTop && blogListComponent.offsetHeight > 0) {
+      if (window.innerHeight + window.pageYOffset >= document.body.scrollHeight - 2) {
         console.log("load more data....")
         if (loadMoreData) {
           getAllBlogs(page + 1);
@@ -137,6 +138,7 @@ export default function Blogs({ type }) {
 
   function getWindowSize() {
     const { innerWidth, innerHeight, pageYOffset } = window;
+    console.log(innerWidth, innerHeight, pageYOffset);
     return { innerWidth, innerHeight, pageYOffset };
   }
 
