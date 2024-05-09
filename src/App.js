@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './App.css';
 import Home from './pages/Home';
@@ -18,16 +18,26 @@ import { seo } from './utils';
 
 
 function App() {
+  const [showFlash, setShowFlash] = useState(true);
+
   // const match = useMatch();
   // console.log("macth", match);
   useEffect(() => {
     seo();
+    setTimeout(() => {
+      setShowFlash(false)
+    }, 3000)
   });
 
   return (
     <div className="App">
-      <Header></Header>
-      <Routes>
+      {showFlash &&
+        <div class="center-page loading">
+          <img src="/assets/img/splash.jpeg" alt="logo" className='spalsh-image-width' />
+        </div>
+      }
+      {!showFlash && <Header></Header>}
+      {!showFlash && <Routes>
         <Route path="/blogs" element={<Blogs />} />
         <Route path={`/about`} element={<AboutUs />} />
         <Route path="/news" element={<NewsAndUpdates />} />
@@ -37,8 +47,8 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/" element={<Home />} />
-      </Routes>
-      <Footer></Footer>
+      </Routes>}
+      {!showFlash && <Footer></Footer>}
     </div>
   );
 }
