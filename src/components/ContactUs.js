@@ -7,7 +7,14 @@ const ContactUs = ({ isHomePage = false }) => {
           <h2>Contact</h2>
           <p>Contact Us</p>
         </div>}
-
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.151072515386!2d72.79158801046147!3d21.18615678042155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04ddf8afc8071%3A0x9ac913d2013b5051!2sRoyal%20trade%20center!5e0!3m2!1sen!2sin!4v1715279576883!5m2!1sen!2sin"
+          style={{ border: 0, width: '100%', height: '270px', }}
+          allowfullscreen=""
+          loading="lazy"
+          title="Map"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        {/* 
         <div>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.161103491086!2d72.80758461414905!3d21.185758187777687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e775165b577%3A0x1a65169761d366af!2sNeelgagan%20Apartment%2C%20Surat%20-%20Dumas%20Rd%2C%20Athwa%20Gate%2C%20Surat%2C%20Gujarat%20395001!5e0!3m2!1sen!2sin!4v1654945367413!5m2!1sen!2sin"
@@ -15,7 +22,7 @@ const ContactUs = ({ isHomePage = false }) => {
             allowFullScreen="" loading="lazy"
             title="Map"
             referrerPolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+        </div> */}
 
         <div className="row mt-5">
 
@@ -24,7 +31,7 @@ const ContactUs = ({ isHomePage = false }) => {
               <div className="address">
                 <i className="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p>A-101, Nilgagan Apartment, opp. bank of baroda, Athwagate</p>
+                <p>306, Royal Trade Center, Opp Star Bazar, Pal Hajira Road, Pal Surat - 395009</p>
               </div>
 
               <div className="email">
